@@ -5,7 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js"
 import {register} from "./controllers/auth.js"
-//import userRoutes from "./routes/users.js"
+import userRoutes from "./routes/users.js";
 
 /*CONFIGURATIONS*/
 dotenv.config();
@@ -20,7 +20,7 @@ app.post("/auth/register", register)
 
 /*ROUTES*/
 app.use("/auth", authRoutes)
-//app.use("/users", userRoutes)
+app.use("/users", userRoutes)
 
 /*MONGOOSE SETUP*/
 const PORT = process.env.PORT || 6001;
