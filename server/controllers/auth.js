@@ -4,7 +4,6 @@ import User from "../models/User.js"
 
 export const register = async(req, res) => {
     try {
-        console.log(req.body);
         const {
             firstName,
             lastName,
@@ -39,7 +38,6 @@ export const register = async(req, res) => {
 
 /*LOGGING IN*/
 export const login = async(req, res) => {
-    console.log('login', req.body);
     try {
         const {email, password} = req.body;
         const user = await User.findOne({email: email});
